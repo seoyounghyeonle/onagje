@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양재 소담갈비 | 프리미엄 숯불구이 다이닝</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#fbf7ed',
+                            200: '#f4e9cf',
+                            300: '#eddab1',
+                            400: '#dfbe75',
+                            500: '#d1a239',
+                            600: '#bc9233',
+                            700: '#9d7a2b',
+                            800: '#7d6122',
+                            900: '#66501c',
+                        },
+                        dark: {
+                            900: '#111111',
+                            800: '#1a1a1a',
+                            700: '#262626',
+                            600: '#333333',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-tab-active {
+            border-color: #d1a239;
+            color: #d1a239;
+            background-color: rgba(209, 162, 57, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full bg-dark-900/95 backdrop-blur-md border-b border-dark-700 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <span class="text-gold-500 text-3xl font-serif font-bold tracking-widest">SODAM</span>
+                    <span class="text-xs tracking-widest text-gray-400 border-l border-dark-600 pl-3 py-1 font-light hidden sm:inline-block">양재 소담갈비</span>
+                </div>
+                
+                <!-- Desktop Nav Elements -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider">
+                    <a href="#about" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">브랜드 스토리</a>
+                    <a href="#menu" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">시그니처 메뉴</a>
+                    <a href="#reservation" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">실시간 예약</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">고객 리뷰</a>
+                    <a href="#location" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">오시는 길</a>
+                </nav>
+
+                <!-- Reservation Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#reservation" class="bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold px-6 py-2.5 rounded-full text-sm hover:from-gold-500 hover:to-gold-400 transition-all duration-300 shadow-lg shadow-gold-500/10 hover:shadow-gold-500/25 transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>온라인 예약
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none p-2" aria-label="메뉴 열기">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 animate-fadeIn">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-gold-400 transition-all">브랜드 스토리</a>
+                <a href="#menu" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-gold-400 transition-all">시그니처 메뉴</a>
+                <a href="#reservation" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-gold-400 transition-all">실시간 예약</a>
+                <a href="#reviews" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-gold-400 transition-all">고객 리뷰</a>
+                <a href="#location" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:bg-dark-700 hover:text-gold-400 transition-all">오시는 길</a>
+                <div class="pt-4 pb-2">
+                    <a href="#reservation" class="block w-full bg-gold-500 text-dark-900 font-bold py-3 rounded-md hover:bg-gold-400 transition-colors">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>온라인 예약하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden pt-20">
+        <!-- Hero Background Image & Gradient overlay -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1920&auto=format&fit=crop" 
+                 alt="Premium Korean Beef BBQ" 
+                 class="w-full h-full object-cover opacity-45 scale-105 animate-[pulse_8s_infinite_alternate]"
+                 onerror="this.src='https://placehold.co/1920x1080/1a1a1a/ffffff?text=Premium+BBQ+Dining'">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-black/80"></div>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 flex flex-col items-center">
+            <span class="text-gold-400 font-serif tracking-[0.3em] uppercase text-sm md:text-base mb-4 block animate-[fadeIn_1s_ease-out]">Premium Charcoal Grill Dining</span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white font-serif mb-6 leading-tight animate-[fadeIn_1.2s_ease-out]">
+                양재에서 경험하는<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500">최상의 고기 예술</span>
+            </h1>
+            <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mb-10 font-light leading-relaxed animate-[fadeIn_1.4s_ease-out]">
+                지하철 3호선·신분당선 양재역 도보 3분 거리.<br>
+                최고급 최고 등급 한우와 엄선된 명품 한돈을 최고급 참숯 백탄으로 선사합니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md animate-[fadeIn_1.6s_ease-out]">
+                <a href="#reservation" class="bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold px-8 py-4 rounded-lg hover:from-gold-500 hover:to-gold-400 transition-all duration-300 text-center shadow-lg shadow-gold-500/20">
+                    실시간 룸 예약하기
+                </a>
+                <a href="#menu" class="border border-gold-500/50 text-gold-400 hover:text-white hover:bg-gold-500/10 font-medium px-8 py-4 rounded-lg transition-all duration-300 text-center">
+                    메뉴 둘러보기
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-center animate-bounce hidden sm:block">
+            <a href="#about" class="text-gray-400 hover:text-gold-400 transition-colors text-sm tracking-widest uppercase">
+                Story Scroll<br>
+                <i class="fa-solid fa-chevron-down mt-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section (Brand Story) -->
+    <section id="about" class="py-24 bg-dark-900 border-b border-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Block -->
+                <div class="space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-gold-500 font-serif tracking-widest text-sm uppercase block">SINCE 2018</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
+                            기품 있는 공간에서 나누는<br>정직하고 깊은 맛의 온기
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed font-light text-base sm:text-lg">
+                        양재 소담갈비는 단순히 고기를 굽는 공간을 넘어, 귀한 손님들과 따스한 담소를 나누는 품격 있는 자리를 지향합니다.<br><br>
+                        엄선된 최고급 원육만을 사용하여 수일간 고유의 온도와 습도 조건에서 습식 숙성(Wet-Aging)을 거칩니다. 최고급 전남 신안 천일염과 비법 과일 양념으로 깊은 감칠맛을 완성합니다.
+                    </p>
+                    
+                    <!-- Highlights -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-dark-700">
+                        <div class="text-center p-3 bg-dark-800 rounded-lg">
+                            <span class="block text-2xl sm:text-3xl font-serif font-bold text-gold-400">1++</span>
+                            <span class="text-xs text-gray-400 mt-1 block">명품 한우 등급</span>
+                        </div>
+                        <div class="text-center p-3 bg-dark-800 rounded-lg">
+                            <span class="block text-2xl sm:text-3xl font-serif font-bold text-gold-400">300h</span>
+                            <span class="text-xs text-gray-400 mt-1 block">저온 숙성 시간</span>
+                        </div>
+                        <div class="text-center p-3 bg-dark-800 rounded-lg">
+                            <span class="block text-2xl sm:text-3xl font-serif font-bold text-gold-400">100%</span>
+                            <span class="text-xs text-gray-400 mt-1 block">참숯 백탄 사용</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic/Image Block -->
+                <div class="relative grid grid-cols-2 gap-4">
+                    <!-- Overlay decorative card -->
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-gold-500/40 pointer-events-none hidden sm:block"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-gold-500/40 pointer-events-none hidden sm:block"></div>
+                    
+                    <div class="col-span-2 rounded-xl overflow-hidden shadow-2xl h-64 md:h-80 relative group">
+                        <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?q=80&w=800&auto=format&fit=crop" 
+                             alt="Luxury interior" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x600/1a1a1a/ffffff?text=Cozy+Interior'">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-dark-900/90 backdrop-blur-md px-4 py-2 rounded text-xs tracking-wider text-gold-400 border border-gold-500/20">
+                            모임에 적합한 단독 룸 (최대 32인)
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl h-48 md:h-56 relative group">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=600&auto=format&fit=crop" 
+                             alt="Premium Raw Meat" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Cut'">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl h-48 md:h-56 relative group">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop" 
+                             alt="Fine Wine Selection" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Wine+Selection'">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 text-xs font-medium text-white">콜키지 프리 서비스 제공</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section with Filters -->
+    <section id="menu" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold-500 font-serif tracking-widest text-sm uppercase block mb-3">Sodam Signature Menu</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">소담 정성의 대표 메뉴</h2>
+                <p class="text-gray-400 font-light text-sm sm:text-base">엄격히 엄선한 식재료와 장인의 손길을 거쳐 탄생한 시그니처 한 상을 소개합니다.</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12 max-w-3xl mx-auto">
+                <button onclick="filterMenu('all')" id="tab-all" class="menu-tab-active px-5 py-2.5 rounded-full border border-dark-600 text-sm font-medium tracking-wide transition-all duration-300">
+                    전체보기
+                </button>
+                <button onclick="filterMenu('beef')" id="tab-beef" class="px-5 py-2.5 rounded-full border border-dark-600 text-gray-400 hover:text-gold-400 hover:border-gold-500/50 text-sm font-medium tracking-wide transition-all duration-300">
+                    한우 명품구이 (Beef)
+                </button>
+                <button onclick="filterMenu('pork')" id="tab-pork" class="px-5 py-2.5 rounded-full border border-dark-600 text-gray-400 hover:text-gold-400 hover:border-gold-500/50 text-sm font-medium tracking-wide transition-all duration-300">
+                    한돈 숯불구이 (Pork)
+                </button>
+                <button onclick="filterMenu('lunch')" id="tab-lunch" class="px-5 py-2.5 rounded-full border border-dark-600 text-gray-400 hover:text-gold-400 hover:border-gold-500/50 text-sm font-medium tracking-wide transition-all duration-300">
+                    정갈한 점심특선
+                </button>
+                <button onclick="filterMenu('side')" id="tab-side" class="px-5 py-2.5 rounded-full border border-dark-600 text-gray-400 hover:text-gold-400 hover:border-gold-500/50 text-sm font-medium tracking-wide transition-all duration-300">
+                    사이드 & 전통주
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Beef Item 1 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="beef">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" 
+                             alt="Premium Korean Beef Rib" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Rib'">
+                        <span class="absolute top-4 right-4 bg-gold-600 text-dark-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">best</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">명품 한우 눈꽃 꽃등심</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">59,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                마블링 스코어 No.9 최상급 한우 꽃등심만을 고집하여 풍성한 육즙과 함께 솜사탕처럼 사르르 녹아내리는 부드러움을 선사합니다. (150g)
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-leaf"></i> <span>신안 천일염, 수제 명이나물 제공</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beef Item 2 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="beef">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop" 
+                             alt="Sodam Seasoned Beef Rib" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Marinated'">
+                        <span class="absolute top-4 right-4 bg-gold-600 text-dark-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Signature</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">소담 숯불 양념갈비</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">45,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                오랜 세월 고수해 온 특제 과일 양념장에 48시간 정성껏 재워 참숯 향이 골고루 배인 소담만의 전통 프리미엄 소양념갈비입니다. (250g)
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-fire"></i> <span>참숯 직화 최적화</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pork Item 1 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="pork">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1602153508753-4ace888813a0?q=80&w=600&auto=format&fit=crop" 
+                             alt="Luxury Grilled Pork" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Pork'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">얼룩도야지 명품 삼겹살</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">21,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                국내 유일 0.3% 얼룩돼지(YBD) 품종으로 육즙 손실을 최소화해 타 삼겹살에서는 느껴볼 수 없는 쫀득함과 아삭한 식감이 일품입니다. (150g)
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-leaf"></i> <span>갈치속젓, 구운 마늘 함께 제공</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pork Item 2 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="pork">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=600&auto=format&fit=crop" 
+                             alt="Pork Shoulder Cut" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Pork+Neck'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">눈꽃 목살 참숯구이</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">21,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                촘촘한 마블링이 분포되어 퍽퍽함 없이 마치 부드러운 소고기 안심을 먹는 듯 고소하고 풍부한 육즙을 머금은 최고급 목살입니다. (150g)
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-award"></i> <span>전문 그릴러 전담 서비스</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Item 1 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="lunch">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?q=80&w=600&auto=format&fit=crop" 
+                             alt="Sodam Galbitang" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Lunch+Galbi+Soup'">
+                        <span class="absolute top-4 right-4 bg-gray-700 text-white text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wider">평일 점심 전용</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">소담 영양 갈비탕</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">17,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                큼직한 우갈비를 가마솥에서 인삼, 대추 등 천연 한약재와 함께 매일 아침 전통 방식으로 끓여낸 든든하고 담백한 한 끼 식사입니다.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-bowl-food"></i> <span>돌솥공기밥, 수제 깍두기 포함</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Item 1 -->
+                <div class="menu-card bg-dark-900 rounded-xl overflow-hidden border border-dark-700/60 shadow-xl group hover:border-gold-500/30 transition-all duration-300 flex flex-col" data-category="side">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop" 
+                             alt="Gourmet side dishes" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=K-Wine'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-200">소담 육회 & 증류 전통주 세트</h3>
+                                <span class="text-gold-400 font-serif font-bold text-lg">38,000원</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                                당일 도축하여 신선하고 고소한 한우 육회(120g)와 함께, 깊은 풍미의 전통 증류 소주 '화요' 또는 '경주법주'를 한 상에 즐기는 명품 세트입니다.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gold-500/80 border-t border-dark-700/80 pt-4">
+                            <i class="fa-solid fa-wine-glass-asterisk"></i> <span>주류 선택 가능 (화요25/법주 택1)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Banner Section -->
+    <section class="py-16 bg-gradient-to-r from-gold-900 to-amber-950 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold mb-4">비즈니스 바이어 회식 & 특별한 가족 모임을 위한 명품 공간</h3>
+            <p class="text-gold-200/90 max-w-2xl mx-auto mb-6 text-sm sm:text-base font-light">
+                소담갈비는 4인실부터 최대 32인까지 전용 무선 마이크 및 미팅 보드가 완비된 완벽한 개별 프라이빗 다이닝 룸을 구비하고 있습니다. 사전 예약 시 특별 단체 코스 요리를 구성해 드립니다.
+            </p>
+            <div class="inline-flex flex-wrap gap-4 justify-center items-center text-sm">
+                <span class="bg-black/30 px-4 py-2 rounded-full border border-white/10"><i class="fa-solid fa-square-parking text-gold-400 mr-2"></i> 전용 발렛 주차 무료 제공</span>
+                <span class="bg-black/30 px-4 py-2 rounded-full border border-white/10"><i class="fa-solid fa-wine-bottle text-gold-400 mr-2"></i> 콜키지 서비스 테이블당 1병 무료</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-24 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-500 font-serif tracking-widest text-sm uppercase block mb-3">Online Reservation</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">온라인 실시간 예약</h2>
+                <p class="text-gray-400 font-light text-sm sm:text-base">방문하실 시간과 인원을 확정해 주시면 숙련된 전문 서버와 안락한 테이블을 정성스레 준비해 드립니다.</p>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
+                <form id="booking-form" onsubmit="handleBooking(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="book-name" class="block text-sm font-medium text-gray-300 mb-2">예약자 성함 <span class="text-gold-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500 pointer-events-none"><i class="fa-regular fa-user"></i></span>
+                                <input type="text" id="book-name" required class="w-full bg-dark-900 border border-dark-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors placeholder-gray-600" placeholder="홍길동">
+                            </div>
+                        </div>
+                        <!-- Phone -->
+                        <div>
+                            <label for="book-phone" class="block text-sm font-medium text-gray-300 mb-2">연락처 <span class="text-gold-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500 pointer-events-none"><i class="fa-solid fa-phone"></i></span>
+                                <input type="tel" id="book-phone" required class="w-full bg-dark-900 border border-dark-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors placeholder-gray-600" placeholder="010-1234-5678">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <!-- Date -->
+                        <div>
+                            <label for="book-date" class="block text-sm font-medium text-gray-300 mb-2">예약 희망 날짜 <span class="text-gold-500">*</span></label>
+                            <div class="relative">
+                                <input type="date" id="book-date" required class="w-full bg-dark-900 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                            </div>
+                        </div>
+                        <!-- Time -->
+                        <div>
+                            <label for="book-time" class="block text-sm font-medium text-gray-300 mb-2">방문 시간 <span class="text-gold-500">*</span></label>
+                            <select id="book-time" required class="w-full bg-dark-900 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="" disabled selected>시간 선택</option>
+                                <option value="11:30">11:30 (점심)</option>
+                                <option value="12:00">12:00 (점심)</option>
+                                <option value="12:30">12:30 (점심)</option>
+                                <option value="13:00">13:00 (점심)</option>
+                                <option value="13:30">13:30 (점심)</option>
+                                <option value="17:00">17:00 (저녁)</option>
+                                <option value="17:30">17:30 (저녁)</option>
+                                <option value="18:00">18:00 (저녁)</option>
+                                <option value="18:30">18:30 (저녁)</option>
+                                <option value="19:00">19:00 (저녁)</option>
+                                <option value="19:30">19:30 (저녁)</option>
+                                <option value="20:00">20:00 (저녁)</option>
+                            </select>
+                        </div>
+                        <!-- Guest count -->
+                        <div>
+                            <label for="book-guests" class="block text-sm font-medium text-gray-300 mb-2">인원 <span class="text-gold-500">*</span></label>
+                            <select id="book-guests" required class="w-full bg-dark-900 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="" disabled selected>인원 선택</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="8">8명 (단독 룸 예약 추천)</option>
+                                <option value="10">10명 이상 (단체 룸)</option>
+                                <option value="20">20명 이상 (연회 룸)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Room Preference Selection -->
+                    <div>
+                        <span class="block text-sm font-medium text-gray-300 mb-3">선호하시는 공간 스타일</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Option 1 -->
+                            <label class="relative flex items-center justify-between p-4 bg-dark-900 border border-dark-600 rounded-xl cursor-pointer hover:border-gold-500/50 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="room-pref" value="홀 테이블" checked class="accent-gold-500 h-4 w-4">
+                                    <div class="text-left">
+                                        <span class="block text-sm font-semibold text-white">홀 테이블</span>
+                                        <span class="block text-xs text-gray-400">오픈형 고풍스러운 테이블</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <!-- Option 2 -->
+                            <label class="relative flex items-center justify-between p-4 bg-dark-900 border border-dark-600 rounded-xl cursor-pointer hover:border-gold-500/50 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="room-pref" value="세미 프라이빗 부스" class="accent-gold-500 h-4 w-4">
+                                    <div class="text-left">
+                                        <span class="block text-sm font-semibold text-white">세미 프라이빗</span>
+                                        <span class="block text-xs text-gray-400">높은 칸막이 아늑한 부스</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <!-- Option 3 -->
+                            <label class="relative flex items-center justify-between p-4 bg-dark-900 border border-dark-600 rounded-xl cursor-pointer hover:border-gold-500/50 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="room-pref" value="프라이빗 개별 룸" class="accent-gold-500 h-4 w-4">
+                                    <div class="text-left">
+                                        <span class="block text-sm font-semibold text-white">단독 프라이빗 룸</span>
+                                        <span class="block text-xs text-gray-400">완전 밀폐형 개별 공간</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div>
+                        <label for="book-request" class="block text-sm font-medium text-gray-300 mb-2">기타 요청사항 (선택)</label>
+                        <textarea id="book-request" rows="3" class="w-full bg-dark-900 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors placeholder-gray-600" placeholder="아기 의자 필요, 특정 알레르기, 비즈니스 미팅 목적 등 특이사항을 기재해 주십시오."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 text-dark-900 font-bold py-4 rounded-lg hover:from-gold-500 hover:to-gold-400 transition-all duration-300 text-center shadow-lg shadow-gold-500/20 text-lg uppercase tracking-wider">
+                        안전한 온라인 예약 접수하기
+                    </button>
+                </form>
+
+                <!-- Booking Success Message Modal / Inline Notification -->
+                <div id="booking-success" class="hidden absolute inset-0 bg-dark-800/98 z-20 flex flex-col items-center justify-center p-8 text-center rounded-2xl animate-scaleUp">
+                    <div class="w-20 h-20 bg-gold-500/10 rounded-full flex items-center justify-center border border-gold-500 mb-6">
+                        <i class="fa-solid fa-check text-4xl text-gold-500 animate-bounce"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">예약 신청이 접수되었습니다</h3>
+                    <p class="text-gold-400 text-sm tracking-wider uppercase mb-6">Reservation Pending Confirmation</p>
+                    
+                    <div class="bg-dark-900 p-6 rounded-xl text-left max-w-md w-full mb-8 border border-dark-700 space-y-3 text-sm">
+                        <p class="text-gray-400"><strong class="text-white">예약자명:</strong> <span id="res-name">홍길동</span></p>
+                        <p class="text-gray-400"><strong class="text-white">방문 일시:</strong> <span id="res-datetime">2026-10-15 18:30</span></p>
+                        <p class="text-gray-400"><strong class="text-white">예약 인원:</strong> <span id="res-guests">4명</span></p>
+                        <p class="text-gray-400"><strong class="text-white">공간 선택:</strong> <span id="res-room">프라이빗 개별 룸</span></p>
+                        <p class="text-xs text-amber-500/90 leading-normal pt-2 border-t border-dark-700/80">
+                            * 예약 확정 알림이 등록하신 연락처(SMS)로 10분 내에 발송됩니다. 좌석 현황에 따라 유선으로 변동 안내를 드릴 수 있습니다.
+                        </p>
+                    </div>
+
+                    <button onclick="resetBookingForm()" class="bg-dark-700 hover:bg-dark-600 border border-dark-600 text-white font-medium px-8 py-2.5 rounded-lg transition-colors">
+                        닫기 및 새로고침
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold-500 font-serif tracking-widest text-sm uppercase block mb-3">Customer Testimonials</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">소담을 사랑하는 손님들의 목소리</h2>
+                <p class="text-gray-400 font-light text-sm sm:text-base">방문해 주신 손님분들의 솔직하고 소중한 평가가 이어집니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Review Write Form Wrapper -->
+                <div class="bg-dark-900 border border-dark-700 rounded-xl p-6 shadow-xl h-fit">
+                    <h3 class="text-xl font-bold text-white mb-4">방문 후기 작성하기</h3>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">양재 소담갈비에서의 식사는 만족스러우셨나요? 손님들의 한 마디 한 마디가 더욱 고귀한 서비스를 이끕니다.</p>
+                    
+                    <form id="review-form" onsubmit="handleReviewSubmit(event)" class="space-y-4">
+                        <!-- Rating Selector -->
+                        <div>
+                            <span class="block text-sm font-medium text-gray-300 mb-1.5">만족도 (별점)</span>
+                            <div class="flex gap-2">
+                                <input type="hidden" id="review-rating" value="5">
+                                <button type="button" onclick="setRating(1)" class="star-btn text-2xl text-gold-500 focus:outline-none"><i class="fa-solid fa-star"></i></button>
+                                <button type="button" onclick="setRating(2)" class="star-btn text-2xl text-gold-500 focus:outline-none"><i class="fa-solid fa-star"></i></button>
+                                <button type="button" onclick="setRating(3)" class="star-btn text-2xl text-gold-500 focus:outline-none"><i class="fa-solid fa-star"></i></button>
+                                <button type="button" onclick="setRating(4)" class="star-btn text-2xl text-gold-500 focus:outline-none"><i class="fa-solid fa-star"></i></button>
+                                <button type="button" onclick="setRating(5)" class="star-btn text-2xl text-gold-500 focus:outline-none"><i class="fa-solid fa-star"></i></button>
+                            </div>
+                        </div>
+                        <!-- Author Name -->
+                        <div>
+                            <label for="review-author" class="block text-sm font-medium text-gray-300 mb-1">성함 / 닉네임</label>
+                            <input type="text" id="review-author" required class="w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="소담러브">
+                        </div>
+                        <!-- Key Selection -->
+                        <div>
+                            <label for="review-menu-tag" class="block text-sm font-medium text-gray-300 mb-1">체험한 메뉴</label>
+                            <select id="review-menu-tag" required class="w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="명품 한우 눈꽃 꽃등심">명품 한우 눈꽃 꽃등심</option>
+                                <option value="소담 숯불 양념갈비">소담 숯불 양념갈비</option>
+                                <option value="얼룩도야지 명품 삼겹살">얼룩도야지 명품 삼겹살</option>
+                                <option value="눈꽃 목살 참숯구이">눈꽃 목살 참숯구이</option>
+                                <option value="소담 영양 갈비탕">소담 영양 갈비탕</option>
+                            </select>
+                        </div>
+                        <!-- Content -->
+                        <div>
+                            <label for="review-content" class="block text-sm font-medium text-gray-300 mb-1">후기 내용</label>
+                            <textarea id="review-content" required rows="4" class="w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors placeholder-gray-600" placeholder="고기의 상태, 직원의 응대, 인테리어 등에 대한 솔직한 후기를 들려주세요."></textarea>
+                        </div>
+                        <!-- Submit -->
+                        <button type="submit" class="w-full bg-gold-600 text-dark-900 font-bold py-3 rounded-lg hover:bg-gold-500 transition-colors text-sm tracking-wider">
+                            후기 등록하기
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Reviews Feed -->
+                <div class="lg:col-span-2 space-y-6 overflow-y-auto max-h-[640px] pr-2" id="reviews-feed">
+                    <!-- Sample Review 1 -->
+                    <div class="bg-dark-900 border border-dark-700/80 p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gold-600/10 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 font-bold text-sm">김*</div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">김지호</h4>
+                                    <span class="text-[11px] text-gray-500">2026.07.01 방문</span>
+                                </div>
+                            </div>
+                            <div class="flex text-gold-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                            양재역 인근에서 대중적인 고기집 말고 격식 있는 비즈니스 미팅 식사를 찾다 소담갈비 룸을 예약했습니다. 꽃등심 마블링이 진짜 예술이었고, 직원분이 직접 딱 먹기 좋은 타이밍에 고기를 구워주셔서 대화에 집중할 수 있었습니다. 손님분도 극찬하셨어요! 콜키지 프리라 챙겨간 좋은 와인이랑 아주 행복한 시간 보냈습니다.
+                        </p>
+                        <div class="inline-block bg-dark-800 border border-dark-700 rounded-full px-3 py-1 text-xs text-gold-400">
+                            <i class="fa-solid fa-utensils mr-1.5"></i> 명품 한우 눈꽃 꽃등심
+                        </div>
+                    </div>
+
+                    <!-- Sample Review 2 -->
+                    <div class="bg-dark-900 border border-dark-700/80 p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gold-600/10 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 font-bold text-sm">이*</div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">이서연</h4>
+                                    <span class="text-[11px] text-gray-500">2026.06.28 방문</span>
+                                </div>
+                            </div>
+                            <div class="flex text-gold-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                            부모님 생신 기념으로 단독 룸을 빌려 식사했습니다. 양념 소갈비 양념 맛이 자극적이지 않고 은은하게 달콤해서 부모님이 무척 마음에 들어하셨어요. 주차도 복잡한 양재동 한가운데서 주차가 아주 매끄러웠고 룸 분위기가 완전 고급 호텔 느낌이라 조용하고 오붓하게 식사했습니다. 재방문 의사 100%입니다!
+                        </p>
+                        <div class="inline-block bg-dark-800 border border-dark-700 rounded-full px-3 py-1 text-xs text-gold-400">
+                            <i class="fa-solid fa-utensils mr-1.5"></i> 소담 숯불 양념갈비
+                        </div>
+                    </div>
+
+                    <!-- Sample Review 3 -->
+                    <div class="bg-dark-900 border border-dark-700/80 p-6 rounded-xl shadow-lg transition-transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gold-600/10 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 font-bold text-sm">박*</div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">박주원</h4>
+                                    <span class="text-[11px] text-gray-500">2026.06.15 방문</span>
+                                </div>
+                            </div>
+                            <div class="flex text-gold-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                            평일 한정 갈비탕도 대박이에요. 고기가 가득 들어있고 국물이 아주 진하고 든든해서 해장용으로도 최고입니다. 점심때 양재역 직장인들 웨이팅 있는 편인데, 대기할 만한 값어치가 있습니다. 깍두기와의 궁합이 환상적입니다!
+                        </p>
+                        <div class="inline-block bg-dark-800 border border-dark-700 rounded-full px-3 py-1 text-xs text-gold-400">
+                            <i class="fa-solid fa-utensils mr-1.5"></i> 소담 영양 갈비탕
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location (Map & Transport) -->
+    <section id="location" class="py-24 bg-dark-900 border-t border-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold-500 font-serif tracking-widest text-sm uppercase block mb-3">Location & Directions</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">소담 오시는 길</h2>
+                <p class="text-gray-400 font-light text-sm sm:text-base">양재역 도보 3분 거리의 뛰어난 접근성, 편안한 대중교통 및 주차 안내</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Location Details Left -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 flex gap-4 items-start">
+                            <span class="w-12 h-12 bg-gold-600/10 rounded-full flex items-center justify-center text-gold-400 text-lg flex-shrink-0"><i class="fa-solid fa-map-location-dot"></i></span>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">매장 주소</h4>
+                                <p class="text-sm text-gray-300 leading-relaxed">서울특별시 서초구 강남대로39길 12-10 (양재동)</p>
+                                <p class="text-xs text-gray-500 mt-1">양재역 4번 출구에서 220m 도보 3분</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 flex gap-4 items-start">
+                            <span class="w-12 h-12 bg-gold-600/10 rounded-full flex items-center justify-center text-gold-400 text-lg flex-shrink-0"><i class="fa-solid fa-phone-volume"></i></span>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">문의 및 예약전화</h4>
+                                <p class="text-sm text-gray-300 font-serif font-bold tracking-wider">02-3456-7890</p>
+                                <p class="text-xs text-gray-500 mt-1">단체 연회 및 기업 전용 대관 문의 가능</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 flex gap-4 items-start">
+                            <span class="w-12 h-12 bg-gold-600/10 rounded-full flex items-center justify-center text-gold-400 text-lg flex-shrink-0"><i class="fa-regular fa-clock"></i></span>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">영업 시간 및 주차</h4>
+                                <p class="text-sm text-gray-300">매일 11:30 - 22:00 (Break Time 15:00 - 17:00)</p>
+                                <p class="text-xs text-amber-500/90 mt-1"><i class="fa-solid fa-circle-info mr-1"></i> 전 주차 차량 전용 무료 발렛파킹 서비스</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Map Links Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://map.kakao.com" target="_blank" rel="noopener noreferrer" class="flex-1 bg-yellow-500 hover:bg-yellow-400 text-dark-900 font-bold py-3.5 rounded-lg text-center transition-colors text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-map-pin"></i> 카카오맵 바로가기
+                        </a>
+                        <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-lg text-center transition-colors text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-map"></i> 네이버 지도 바로가기
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Visual Map Box -->
+                <div class="lg:col-span-7 h-[400px] lg:h-auto min-h-[350px] relative rounded-2xl overflow-hidden border border-dark-700">
+                    <!-- Map Mock Visual Drawing using high quality styled CSS map elements -->
+                    <div class="absolute inset-0 bg-dark-800 flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden">
+                        <!-- Abstract Metro/Street grid backdrop to simulate beautiful vector map -->
+                        <div class="absolute inset-0 opacity-20 pointer-events-none">
+                            <div class="absolute top-[20%] left-0 w-full h-[15px] bg-dark-700"></div>
+                            <div class="absolute top-[60%] left-0 w-full h-[40px] bg-dark-600"></div>
+                            <div class="absolute top-0 left-[35%] w-[40px] h-full bg-dark-600 rotate-12"></div>
+                            <div class="absolute top-0 left-[75%] w-[25px] h-full bg-dark-700 -rotate-12"></div>
+                        </div>
+
+                        <!-- Yangjae Station Highlight Marker -->
+                        <div class="absolute top-[40%] left-[28%] bg-orange-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-xl border border-orange-500 z-10 flex items-center gap-1.5 animate-pulse">
+                            <i class="fa-solid fa-train-subway"></i> <span>양재역 (3호선/신분당선)</span>
+                        </div>
+
+                        <!-- Transit Route Line -->
+                        <svg class="absolute top-[48%] left-[34%] w-48 h-24 pointer-events-none opacity-80" viewBox="0 0 200 100">
+                            <path d="M 0,0 C 50,40 100,20 160,80" fill="none" stroke="#d1a239" stroke-width="4" stroke-linecap="round" stroke-dasharray="8,6" class="animate-[dash_5s_linear_infinite]"/>
+                        </svg>
+
+                        <!-- Sodam Galbi Elegant Marker -->
+                        <div class="absolute top-[68%] left-[72%] bg-gold-600 text-dark-900 p-4 rounded-2xl shadow-2xl border-2 border-white z-10 flex flex-col items-center transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="text-xs font-bold tracking-widest uppercase mb-0.5">Premium Grill</div>
+                            <div class="font-serif font-bold text-base whitespace-nowrap"><i class="fa-solid fa-star text-amber-950 mr-1.5"></i>양재 소담갈비</div>
+                            <div class="text-[10px] text-amber-950 mt-1 bg-white/50 px-2 py-0.5 rounded-full font-medium">도보 3분 거리</div>
+                        </div>
+
+                        <!-- Exit 4 info tag -->
+                        <div class="absolute top-[48%] left-[38%] bg-dark-900 border border-dark-600 text-[10px] px-2 py-1 rounded text-gray-300">
+                            4번출구 직진 후 우회전
+                        </div>
+
+                        <!-- Real-time dynamic hint text overlay -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-dark-900/90 backdrop-blur border border-dark-600/80 p-3 rounded-xl text-xs text-gray-300 flex justify-between items-center z-10">
+                            <span><i class="fa-solid fa-circle-check text-gold-500 mr-1"></i> 발렛파킹 주차부스는 정문 오른쪽에 있습니다.</span>
+                            <span class="text-[10px] bg-gold-600/20 text-gold-400 px-2 py-0.5 rounded border border-gold-500/20">무료 서비스</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-900 border-t border-dark-800 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Info Column -->
+                <div class="md:col-span-2 space-y-4">
+                    <span class="text-gold-500 text-2xl font-serif font-bold tracking-widest block">SODAM GALBI</span>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-sm">
+                        양재 소담갈비는 한우 등급 기준 최고의 원육과 명품 전통 기법의 조리 철학을 실천하여 매일 가치 있고 풍성한 감동의 한 상을 약속드립니다.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-dark-800 border border-dark-700 hover:border-gold-500 flex items-center justify-center text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-dark-800 border border-dark-700 hover:border-gold-500 flex items-center justify-center text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-solid fa-blog"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-dark-800 border border-dark-700 hover:border-gold-500 flex items-center justify-center text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-solid fa-map-pin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h4 class="font-bold text-white text-sm tracking-wider uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-400">
+                        <li><a href="#about" class="hover:text-gold-400 transition-colors">브랜드 스토리</a></li>
+                        <li><a href="#menu" class="hover:text-gold-400 transition-colors">시그니처 메뉴</a></li>
+                        <li><a href="#reservation" class="hover:text-gold-400 transition-colors">실시간 간편예약</a></li>
+                        <li><a href="#reviews" class="hover:text-gold-400 transition-colors">만족도 후기 및 리뷰</a></li>
+                    </ul>
+                </div>
+
+                <!-- Info Column -->
+                <div>
+                    <h4 class="font-bold text-white text-sm tracking-wider uppercase mb-4">Contact Info</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-500">
+                        <li><i class="fa-solid fa-phone text-gold-500/80 mr-1.5"></i> 02-3456-7890</li>
+                        <li><i class="fa-regular fa-envelope text-gold-500/80 mr-1.5"></i> contact@sodamgalbi.co.kr</li>
+                        <li><i class="fa-solid fa-location-dot text-gold-500/80 mr-1.5"></i> 서울시 서초구 강남대로39길 12-10</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-dark-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-600">
+                <p>&copy; 2026 양재 소담갈비 (Sodam Galbi). All rights reserved. Designed for Luxury Dining Experience.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:underline">이용약관</a>
+                    <a href="#" class="hover:underline">개인정보처리방침</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link inside it is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth active navigation highlight effect on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-1', 'bg-dark-900/98', 'shadow-2xl');
+                header.classList.remove('py-0');
+            } else {
+                header.classList.remove('py-1', 'shadow-2xl');
+                header.classList.add('py-0');
+            }
+        });
+
+        // Menu filter function
+        function filterMenu(category) {
+            const cards = document.querySelectorAll('.menu-card');
+            const tabs = document.querySelectorAll('#menu button[onclick^="filterMenu"]');
+
+            // Set active class on active tab
+            tabs.forEach(tab => {
+                if (tab.id === `tab-${category}`) {
+                    tab.classList.add('menu-tab-active');
+                    tab.classList.remove('text-gray-400', 'border-dark-600');
+                } else {
+                    tab.classList.remove('menu-tab-active');
+                    tab.classList.add('text-gray-400', 'border-dark-600');
+                }
+            });
+
+            // Show / Hide cards with simple smooth animation
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                    card.classList.add('animate-[fadeIn_0.5s_ease-out]');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('animate-[fadeIn_0.5s_ease-out]');
+                }
+            });
+        }
+
+        // Reservation handler logic (Using DOM elements, avoiding native alert boxes)
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('book-name').value;
+            const phone = document.getElementById('book-phone').value;
+            const date = document.getElementById('book-date').value;
+            const time = document.getElementById('book-time').value;
+            const guests = document.getElementById('book-guests').value;
+            const roomPref = document.querySelector('input[name="room-pref"]:checked').value;
+            
+            // Populating visual elements inside modal notification screen
+            document.getElementById('res-name').textContent = name;
+            document.getElementById('res-datetime').textContent = `${date} ${time}`;
+            document.getElementById('res-guests').textContent = `${guests}명`;
+            document.getElementById('res-room').textContent = roomPref;
+
+            // Display success cover overlay screen over form layout container
+            const successOverlay = document.getElementById('booking-success');
+            successOverlay.classList.remove('hidden');
+        }
+
+        // Reset reservation form back to fresh state
+        function resetBookingForm() {
+            document.getElementById('booking-form').reset();
+            const successOverlay = document.getElementById('booking-success');
+            successOverlay.classList.add('hidden');
+        }
+
+        // Dynamic user reviews system logic
+        let currentSelectedRating = 5;
+
+        function setRating(rating) {
+            currentSelectedRating = rating;
+            document.getElementById('review-rating').value = rating;
+            
+            const stars = document.querySelectorAll('.star-btn');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.innerHTML = '<i class="fa-solid fa-star"></i>';
+                    star.className = 'star-btn text-2xl text-gold-500 focus:outline-none';
+                } else {
+                    star.innerHTML = '<i class="fa-regular fa-star"></i>';
+                    star.className = 'star-btn text-2xl text-gray-600 focus:outline-none';
+                }
+            });
+        }
+
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            
+            const author = document.getElementById('review-author').value;
+            const menuTag = document.getElementById('review-menu-tag').value;
+            const content = document.getElementById('review-content').value;
+            
+            // Build star HTML representation dynamically
+            let starHTML = '';
+            for(let i=0; i<5; i++) {
+                if (i < currentSelectedRating) {
+                    starHTML += '<i class="fa-solid fa-star"></i>';
+                } else {
+                    starHTML += '<i class="fa-regular fa-star"></i>';
+                }
+            }
+
+            // Create modern fresh review container node element
+            const feedContainer = document.getElementById('reviews-feed');
+            const newReview = document.createElement('div');
+            newReview.className = "bg-dark-900 border border-gold-500/20 p-6 rounded-xl shadow-lg animate-scaleUp";
+            newReview.innerHTML = `
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold-600/15 border border-gold-500/30 rounded-full flex items-center justify-center text-gold-400 font-bold text-sm">
+                            ${author.charAt(0)}*
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">${author}</h4>
+                            <span class="text-[11px] text-gray-500">방금 전 방문 등록</span>
+                        </div>
+                    </div>
+                    <div class="flex text-gold-400 text-xs">
+                        ${starHTML}
+                    </div>
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                    ${content}
+                </p>
+                <div class="inline-block bg-dark-800 border border-dark-700 rounded-full px-3 py-1 text-xs text-gold-400">
+                    <i class="fa-solid fa-utensils mr-1.5"></i> ${menuTag}
+                </div>
+            `;
+
+            // Insert new review seamlessly onto the top of feed layout list
+            feedContainer.insertBefore(newReview, feedContainer.firstChild);
+
+            // Reset write review form inputs properly
+            document.getElementById('review-form').reset();
+            setRating(5);
+        }
+
+        // Set default date input today min limits
+        window.addEventListener('load', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('book-date').min = today;
+            document.getElementById('book-date').value = today;
+        });
+    </script>
+</body>
+</html>
